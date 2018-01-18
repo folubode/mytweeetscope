@@ -44,6 +44,7 @@ class KeywordsController < ApplicationController
   def update
     respond_to do |format|
       if @keyword.update(keyword_params)
+        @keyword.grab_twitts
         format.html { redirect_to @keyword, notice: 'Keyword was successfully updated.' }
         format.json { render :show, status: :ok, location: @keyword }
       else
