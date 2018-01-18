@@ -11,7 +11,7 @@ def grab_twitts
 	end
 end
 
- 	$client.search(self.word, :count => 3, result_type: "recent").take(3).collect do |tweet|
+ 	$client.search("heroku", :count => 3, :result_type => "recent").take(3).collect do |tweet|
  	  "#{tweet.user.screen_name}: #{tweet.text}"
  	end
 
