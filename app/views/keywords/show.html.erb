@@ -11,9 +11,15 @@
 		<li> 
 			<img src="<%= twitt.user_image_url %>" width="50"> 
 			
-			<strong><%= twitt.user_screen_name %>:
+			<strong><%= twitt.user_screen_name %>:</strong> 
+			
+			<%= twitt.text %> 
+			
+			<strong>Twitted: <em> <%= time_ago_in_words(twitt.created_at) %> ago </em></strong>
 
-			</strong> <em><%= twitt.text %></em> 
+
+			<br/>
+
 		</li>
 		<% end %>
 	</ul>
