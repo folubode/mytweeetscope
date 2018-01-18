@@ -9,10 +9,14 @@
 	<ul>
 		<% @keyword.tweets.each do |twitt| %>
 		<li> 
-			<strong><%= twitt.user_screen_name %>:</strong> <em><%= twitt.text %></em> 
+			<img src="<%= twitt.user_image_url %>" width="50"> 
+			
+			<strong><%= twitt.user_screen_name %>:
+
+			</strong> <em><%= twitt.text %></em> 
 		</li>
 		<% end %>
 	</ul>
 
 <%= link_to 'Edit', edit_keyword_path(@keyword) %> |
-<%= link_to 'Back', keywords_path %>
+<%= link_to 'Back to Keywords', keywords_path %>
