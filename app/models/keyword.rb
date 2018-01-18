@@ -1,5 +1,6 @@
 class Keyword < ApplicationRecord
 
+require 'twitter'
 def grab_twitts
 	client = Twitter::REST::Client.new do |config|
 	  config.consumer_key        = "56fr5L6D92AxgtItBMtobalrK"
