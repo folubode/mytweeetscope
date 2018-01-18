@@ -1,6 +1,7 @@
 class Keyword < ApplicationRecord
 
 require 'twitter'
+
 def grab_twitts
 	client = Twitter::REST::Client.new do |config|
 	  config.consumer_key        = "56fr5L6D92AxgtItBMtobalrK"
@@ -10,9 +11,9 @@ def grab_twitts
 	end
 end
 
- 	client.search(self.word, :count => 3, result_type: "recent").take(3).collect do |tweet|
- 	  "#{tweet.user.screen_name}: #{tweet.text}"
- 	end
+ 	# client.search(self.word, :count => 3, result_type: "recent").take(3).collect do |tweet|
+ 	#   "#{tweet.user.screen_name}: #{tweet.text}"
+ 	# end
 
 # client.search("heroku", :count => 3, result_type: "recent").take(3).collect do |tweet|
 #  	  "#{tweet.user.screen_name}: #{tweet.text}"
