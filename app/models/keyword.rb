@@ -3,7 +3,7 @@ class Keyword < ApplicationRecord
 require 'twitter'
 
 def grab_twitts
-	client = Twitter::REST::Client.new do |config|
+	$client = Twitter::REST::Client.new do |config|
 	  config.consumer_key        = "56fr5L6D92AxgtItBMtobalrK"
 	  config.consumer_secret     = "rgnTSiI2JWAp65dXSFrSEFQdA8G3UNMp1SXkLKICMHTrPWDlYd"
 	  config.access_token        = "3271997323-M9HQq3roa2Byu2tg6bidew83SnFQZy7GJDs53d3"
