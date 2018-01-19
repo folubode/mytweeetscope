@@ -14,7 +14,7 @@ class Keyword < ApplicationRecord
  		  new_tweet = Tweet.new
 
  		  new_tweet.tweet_id 					= tweet.id.to_s
- 		  new_tweet.tweet_created_at 	= tweet.tweet_created_at #created_at
+ 		  new_tweet.tweet_created_at 	= tweet.created_at
  		  new_tweet.text 							= tweet.text
 
  		  new_tweet.user_uid 					= tweet.user.id
