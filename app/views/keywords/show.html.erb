@@ -20,7 +20,7 @@
 			
 			<strong><%= twitt.user_screen_name %>:</strong> 
 			
-			<blockquote><%= twitt.text %> </blockquote>
+			<blockquote><%= h(twitt.text).gsub(/\n/,'<br/>').html_safe %> </blockquote>
 			
 			<!-- <strong><em> <%= time_ago_in_words(twitt.created_at) %> ago </em></strong> -->
 

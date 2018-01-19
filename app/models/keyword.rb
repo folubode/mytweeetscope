@@ -10,7 +10,13 @@ class Keyword < ApplicationRecord
 	  	config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
 		end
 
-	 	client.search(self.word, :count => 10, :result_type => "recent").take(10).collect do |tweet|
+
+		#geocode: "-40.900557,	174.885971mi"
+#9.081999	8.675277	Nigeria
+#		geocode: "39.9525839,-75.1652215,10mi"
+#geocode: "-40.900557,	174.885971mi",
+#lang: "en"
+	 	client.search(self.word, :count => 100, :result_type => "recent").take(100).collect do |tweet|
  		  new_tweet = Tweet.new
 
  		  new_tweet.tweet_id 					= tweet.id.to_s
