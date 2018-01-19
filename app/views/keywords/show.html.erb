@@ -22,7 +22,7 @@
 			
 			<blockquote><%= h(twitt.text).gsub(/\n/,'<br/>').html_safe %> </blockquote>
 			
-			<!-- <strong><em> <%= time_ago_in_words(twitt.created_at) %> ago </em></strong> -->
+			<strong><em> <%= time_ago_in_words(twitt.tweet_created_at) %> ago </em></strong>
 
 		</li><hr/><br/>
 		<% end %>
