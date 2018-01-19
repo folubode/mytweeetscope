@@ -25,3 +25,5 @@
 /config/database.yml
 # Ignore application configuration
 /config/application.yml
+/config/initializers/01_twitter_keys.rb
+
