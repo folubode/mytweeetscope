@@ -64,3 +64,5 @@ gem 'twitter', '~> 6.2'
 gem 'figaro' 
 
 gem 'randumb'
+
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'

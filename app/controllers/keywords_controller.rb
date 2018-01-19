@@ -10,6 +10,7 @@ class KeywordsController < ApplicationController
   # GET /keywords/1
   # GET /keywords/1.json
   def show
+    @twitts = @keyword.tweets.page(params[:page]).per_page(50)
     #@keyword.grab_twitts
   end
 

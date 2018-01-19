@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Edit', edit_keyword_path(@keyword) %> |
+<%= link_to 'Back to Keywords', keywords_path %><br/><br/>
+
+<div style="padding:20px; border: solid 1px #CCC; margin-bottom: 20px;">
+		<%= will_paginate @twitts %>
+</div>
+
 <p>
   <strong>Word:</strong>
   <%= @keyword.word %>
@@ -7,7 +14,7 @@
 
 <h2>Latest Twitts (<%= @keyword.tweets.count %>)</h2>
 	<ul>
-		<% @keyword.tweets.each do |twitt| %>
+		<% @twitts.each do |twitt| %>
 		<li> 
 			<img src="<%= twitt.user_image_url %>" width="50"> 
 			
@@ -20,6 +27,11 @@
 		</li><hr/><br/>
 		<% end %>
 	</ul>
+	
+	<div style="padding:20px; border: solid 1px #CCC; margin-bottom: 20px;">
+		<%= will_paginate @twitts %>
+	</div>
+
 
 <%= link_to 'Edit', edit_keyword_path(@keyword) %> |
 <%= link_to 'Back to Keywords', keywords_path %>
