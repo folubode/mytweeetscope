@@ -3,32 +3,42 @@
 <%= link_to 'Edit', edit_keyword_path(@keyword) %> |
 <%= link_to 'Back to Keywords', keywords_path %><br/><br/>
 
-<div style="padding:20px; border: solid 1px #CCC; margin-bottom: 20px;">
+	<div style="padding:20px; margin-bottom: 20px; text-align: center;">
 		<%= will_paginate @twitts %>
-</div>
+	</div>
+
 
 <p>
-  <strong>Word:</strong>
-  <%= @keyword.word %>
+  <h2><strong>Keyword:</strong> <%= @keyword.word %></h2>
 </p>
 
-<h2>Latest Twitts (<%= @keyword.tweets.count %>)</h2>
-	<ul>
-		<% @twitts.each do |twitt| %>
-		<li> 
-			<img src="<%= twitt.user_image_url %>" width="50"> 
-			
-			<strong><%= twitt.user_screen_name %>:</strong> 
-			
-			<blockquote><%= h(twitt.text).gsub(/\n/,'<br/>').html_safe %> </blockquote>
-			
-			<strong><em> <%= time_ago_in_words(twitt.tweet_created_at) %> ago </em></strong>
-
-		</li><hr/><br/>
-		<% end %>
-	</ul>
+<h3>Latest Twitts (<%= @keyword.tweets.count %>)</h3>
 	
-	<div style="padding:20px; border: solid 1px #CCC; margin-bottom: 20px;">
+<table>
+  <thead>
+    <tr>
+      <th>Who</th>
+      <th>Tweet/Retweet</th>
+      <th>When</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @twitts.each do |twitt| %>
+      <tr>
+        <td>
+        	<strong><%= twitt.user_screen_name %></strong><br/>
+        	<img src="<%= twitt.user_image_url %>" width="50">
+        </td>
+        <td><%= h(twitt.text).gsub(/\n/,'<br/>').html_safe %></td>
+        <td><em> <%= time_ago_in_words(twitt.tweet_created_at) %> ago</em></td>
+      </tr>
+  </tbody>
+  <% end %>
+</table>
+
+
+	<div style="padding:20px; margin-bottom: 20px; text-align: center;">
 		<%= will_paginate @twitts %>
 	</div>
 

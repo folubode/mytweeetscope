@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Keywords</h2>
+<%= link_to 'Add Keyword', new_keyword_path %>
 
 <table>
   <thead>
     <tr>
-      <th>Word</th>
-      <th colspan="3"></th>
+      <th><h2>Keywords</h2></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -16,7 +16,7 @@
         <td><%= keyword.word %></td>
         <td><%= link_to 'Show', keyword %></td>
         <td><%= link_to 'Edit', edit_keyword_path(keyword) %></td>
-        <td><%= link_to 'Destroy', keyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', keyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Keyword', new_keyword_path %>
+<%= link_to 'Add Keyword', new_keyword_path %>
