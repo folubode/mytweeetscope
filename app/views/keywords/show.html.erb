@@ -20,9 +20,9 @@
 			
 			<strong><%= twitt.user_screen_name %>:</strong> 
 			
-			<%= twitt.text %> 
+			<blockquote><%= twitt.text %> </blockquote>
 			
-			<strong>Twitted: <em> <%= time_ago_in_words(twitt.created_at) %> ago </em></strong>
+			<!-- <strong><em> <%= time_ago_in_words(twitt.created_at) %> ago </em></strong> -->
 
 		</li><hr/><br/>
 		<% end %>
