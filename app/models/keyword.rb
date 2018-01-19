@@ -4,10 +4,10 @@ class Keyword < ApplicationRecord
 
 	def grab_twitts  # grabing tweets for each keyword
 		client = Twitter::REST::Client.new do |config|
-	  	config.consumer_key        = "56fr5L6D92AxgtItBMtobalrK"
-	  	config.consumer_secret     = "rgnTSiI2JWAp65dXSFrSEFQdA8G3UNMp1SXkLKICMHTrPWDlYd"
-	  	config.access_token        = "3271997323-M9HQq3roa2Byu2tg6bidew83SnFQZy7GJDs53d3"
-	  	config.access_token_secret = "2RcBkCdZe98xg8L69BGZNO99AtfL2CbkWr4ig4maUejyh"
+	  	config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
+	  	config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
+	  	config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
+	  	config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
 		end
 
 	 	client.search(self.word,  :lang => "en", :count => 100, :result_type => "recent").take(100).collect do |tweet|
