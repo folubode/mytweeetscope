@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Add Keyword', new_keyword_path %>
+<%#= link_to 'Add Keyword', new_keyword_path %>
 
 <table>
   <thead>
@@ -14,9 +14,11 @@
     <% @keywords.each do |keyword| %>
       <tr>
         <td><%= keyword.word %></td>
+
         <td><%= link_to 'Show', keyword %></td>
-        <td><%= link_to 'Edit', edit_keyword_path(keyword) %></td>
-        <td><%= link_to 'Delete', keyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= link_to 'Edit', edit_keyword_path(keyword) %></td>
+        <td><%#= link_to 'Delete', keyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +26,4 @@
 
 <br>
 
-<%= link_to 'Add Keyword', new_keyword_path %>
+<%#= link_to 'Add Keyword', new_keyword_path %>
