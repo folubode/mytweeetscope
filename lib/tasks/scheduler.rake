@@ -5,3 +5,13 @@ task :grab_twitts => :environment do
 	puts "done."
 	
 end
+
+desc "Discard old tweet"
+task discard_old_tweet: :environment do
+	puts "Deleting old tweets..."
+	Tweet.all.each do |tweet|
+		if tweet.created_at > 5.hours.ago
+			tweet.destroy
+		end
+	end
+end
