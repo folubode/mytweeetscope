@@ -1,29 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<%#= link_to 'Add Keyword', new_keyword_path %>
+<%= link_to 'Try New Keyword', new_keyword_path %> or  
+Click on a keyword to grab recent tweets live from Twitter
 
-<table>
-  <thead>
-    <tr>
-      <th><h2>Keywords</h2></th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div>
     <% @keywords.each do |keyword| %>
-      <tr>
-        <td><%= keyword.word %></td>
+      <ul>
+        <li><h3><%= link_to keyword.word, keyword %></h3></li>
 
-        <td><%= link_to 'Show', keyword %></td>
+        <td><%#= link_to 'Show', keyword %></td>
         <td><%#= link_to 'Edit', edit_keyword_path(keyword) %></td>
         <td><%#= link_to 'Delete', keyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       
-      </tr>
+      </ul>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
 <br>
 
-<%#= link_to 'Add Keyword', new_keyword_path %>
+<%= link_to 'Try New Keyword', new_keyword_path %>
