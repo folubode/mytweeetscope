@@ -2,6 +2,8 @@ class Keyword < ApplicationRecord
 
 	has_many :tweets, -> { order("tweet_created_at DESC") }, dependent: :destroy
 
+	validates :word, uniqueness: true, on: :create
+
 	def grab_twitts  # grabing tweets for each keyword
 		client = Twitter::REST::Client.new do |config|
 	  	config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
